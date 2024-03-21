@@ -1,7 +1,13 @@
-### Тесты для веб-приложения check-point в рамках стажировки в Antipoff Group:
+## Выполненные задачи для веб-приложения check-point в рамках стажировки в Antipoff Group:
+
+### Тесты:
 1. Для endpoints USER;
 2. Для endpoints FOLDERS;
-3. Для endpoints PASSWORD.
+3. Для endpoints PASSWORD;
+4. Для endpoints JobComment.
+
+### Разработка:
+1. Валидатор для глубины вложенности JobComment.
 
 #### Используемые инструменты:
 1. Python v3.11;
