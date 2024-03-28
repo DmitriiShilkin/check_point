@@ -247,3 +247,12 @@ class TestJobCommentApi:
             headers=auth_headers,
         )
         assert response.status_code == 404
+
+    async def test_delete_with_invalid_uid(
+        self,
+        http_client: AsyncClient,
+        auth_headers: dict,
+    ):
+        endpoint = f"{ROOT_ENDPOINT}{uuid.uuid4()}/"
+        response = await http_client.delete(endpoint, headers=auth_headers)
+        assert response.status_code == 404

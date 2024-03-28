@@ -182,3 +182,14 @@ class TestFolderApi:
         endpoint = f"{ROOT_ENDPOINT}{folder.uid}/"
         response = await http_client.get(endpoint, headers=user_headers)
         assert response.status_code == 404
+
+    async def test_delete_with_invalid_uid(
+        self,
+        http_client: AsyncClient,
+        account: Account,
+        get_auth_headers: Callable,
+    ) -> None:
+        user_headers = await get_auth_headers(account.user)
+        endpoint = f"{ROOT_ENDPOINT}{uuid.uuid4()}/"
+        response = await http_client.delete(endpoint, headers=user_headers)
+        assert response.status_code == 404
